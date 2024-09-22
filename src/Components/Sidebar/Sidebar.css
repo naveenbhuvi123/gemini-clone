@@ -1,0 +1,110 @@
+.sidebar {
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 1; /* Default opacity */
+}
+
+/* Fade-in animation for the sidebar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slide in from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End position */
+    }
+}
+
+.sidebar.show {
+    animation: fadeIn 0.3s forwards; /* Trigger fade-in when class is added */
+}
+
+.sidebar .top {
+    margin-top: 15px;
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    border-radius: 50px;
+    font-size: 14px;
+    color: grey;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.sidebar .new-chat:hover {
+    background-color: #d0d4e1; /* Darker shade on hover */
+}
+
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 2.0s; /* Optional existing animation */
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+.sidebar .bottom {
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2.0s;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .bottom-item {
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2.0s;
+    padding-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.sidebar .bottom-item:hover {
+    color: #4b90ff; /* Change color on hover */
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}
